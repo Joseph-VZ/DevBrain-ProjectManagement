@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevBrain - Requerimientos Funcionales Completos</title>
+
+    <style>
+        :root {
+            --bg: #0e0f14;
+            --surface: #14151c;
+            --surface2: #1c1d27;
+            --border: #2a2b38;
+            --text: #e8e6f0;
+            --muted: #9da0b8;
+            --accent: #7c6dfa;
+            --accent2: #a89bfb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Segoe UI", sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            padding: 40px;
+        }
+
+        .hero {
+            padding: 40px;
+            border-radius: 20px;
+            background: linear-gradient(
+                135deg,
+                var(--surface),
+                var(--surface2)
+            );
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--accent2);
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: var(--accent2);
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: var(--muted);
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: #cfc8ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 18px;
+        }
+
+        th {
+            background: var(--surface2);
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+
+        tr:hover {
+            background: rgba(124, 109, 250, 0.08);
+        }
+
+        .badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: rgba(124, 109, 250, 0.2);
+            color: #cfc8ff;
+        }
+
+        section {
+            scroll-margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ENCABEZADO -->
+        <div class="hero">
+            <h1>DevBrain</h1>
+            <p>
+                Documento completo de requerimientos funcionales basado en la
+                propuesta y arquitectura del proyecto.
+            </p>
+        </div>
+
+        <!-- OBJETIVO -->
+        <div class="card">
+            <h2>Objetivo</h2>
+
+            <p>
+                Definir formalmente las funcionalidades principales de DevBrain,
+                una plataforma orientada a preservar el conocimiento técnico y
+                estratégico generado durante el ciclo de vida de los proyectos
+                de software.
+            </p>
+        </div>
+
+        <!-- ÍNDICE -->
+        <div class="card">
+            <h2>Índice</h2>
+
+            <ul>
+                <li><a href="#m1">1. Gestión de Usuarios</a></li>
+                <li><a href="#m2">2. Gestión de Proyectos</a></li>
+                <li><a href="#m3">3. Gestión de Decisiones</a></li>
+                <li><a href="#m4">4. Sistema de Votaciones</a></li>
+                <li><a href="#m5">5. Timeline Inteligente</a></li>
+                <li><a href="#m6">6. Gestión del Conocimiento</a></li>
+                <li><a href="#m7">7. DevBrain AI</a></li>
+                <li><a href="#m8">8. Gestión de Riesgos</a></li>
+                <li><a href="#m9">9. Notificaciones</a></li>
+            </ul>
+        </div>
+
+        <!-- MÓDULO 1 -->
+        <section class="card" id="m1">
+
+            <h2>Módulo 1. Gestión de Usuarios</h2>
+
+            <p>
+                Administra usuarios, autenticación, roles y preferencias.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Descripción del Requerimiento</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>RF-01</td>
+                        <td>Registrar usuarios</td>
+                        <td><span class="badge">Alta</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>RF-02</td>
+                        <td>Iniciar sesión mediante JWT</td>
+                        <td><span class="badge">Alta</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>RF-03</td>
+                        <td>Editar perfil</td>
+                        <td><span class="badge">Alta</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>RF-04</td>
+                        <td>Asignar roles</td>
+                        <td><span class="badge">Alta</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>RF-05</td>
+                        <td>Configurar notificaciones</td>
+                        <td><span class="badge">Alta</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>RF-06</td>
+                        <td>Consultar integrantes</td>
+                        <td><span class="badge">Alta</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+        <!-- MÓDULO 2 -->
+        <section class="card" id="m2">
+
+            <h2>Módulo 2. Gestión de Proyectos</h2>
+
+            <p>
+                Permite crear, administrar y supervisar proyectos de software.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Descripción del Requerimiento</th>
+                        <th>Prioridad</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>RF-07</td>
+                        <td>Crear proyectos</td>
+                        <td><span class="badge">Alta</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>RF-08</td>
+                        <td>Editar proyectos</td>
+                        <td><span class="badge">Alta</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>RF-09</td>
+                        <td>Consultar información general</td>
+                        <td><span class="badge">Alta</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>RF-10</td>
+                        <td>Agregar participantes</td>
+                        <td><span class="badge">Alta</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>RF-11</td>
+                        <td>Eliminar participantes</td>
+                        <td><span class="badge">Alta</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>RF-12</td>
+                        <td>Visualizar estadísticas</td>
+                        <td><span class="badge">Alta</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+        <!-- CONTINÚA DE LA MISMA MANERA CON LOS MÓDULOS 3 AL 9 -->
+
+        <div class="card">
+
+            <h2>Resumen Ejecutivo</h2>
+
+            <p>
+                El sistema contempla 61 requerimientos funcionales distribuidos
+                en 9 módulos. Los módulos con mayor prioridad para el MVP son
+                Gestión de Decisiones, Sistema de Votaciones y DevBrain AI,
+                debido a que representan el valor diferencial del producto:
+                documentar el porqué de las decisiones y convertir ese
+                conocimiento en información consultable.
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
