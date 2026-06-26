@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevBrain - Requerimientos No Funcionales</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body{
+        background: radial-gradient(circle at top, #1a1c2e, #0b0c12);
+        color:#fff;
+        padding:30px;
+    }
+
+    .container{
+        max-width:1100px;
+        margin:auto;
+    }
+
+    .header{
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(12px);
+        border:1px solid rgba(255,255,255,0.08);
+        padding:35px;
+        border-radius:18px;
+        text-align:center;
+        margin-bottom:25px;
+    }
+
+    .header h1{
+        font-size:34px;
+        background: linear-gradient(90deg,#7f7bff,#b7a6ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .header p{
+        margin-top:10px;
+        color:#cfcfcf;
+    }
+
+    .grid{
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap:20px;
+    }
+
+    .card{
+        background: rgba(255,255,255,0.04);
+        border:1px solid rgba(255,255,255,0.08);
+        backdrop-filter: blur(10px);
+        border-radius:18px;
+        padding:22px;
+        transition: 0.3s ease;
+    }
+
+    .card:hover{
+        transform: translateY(-5px);
+        border-color:#7f7bff;
+    }
+
+    .card h2{
+        color:#b7a6ff;
+        font-size:18px;
+        margin-bottom:12px;
+    }
+
+    .card ul{
+        padding-left:18px;
+    }
+
+    .card li{
+        margin-bottom:8px;
+        line-height:1.5;
+        color:#e6e6e6;
+        font-size:14px;
+    }
+
+    .full{
+        grid-column: 1 / -1;
+    }
+
+    .priority{
+        text-align:center;
+        font-size:28px;
+        font-weight:bold;
+        color:#7f7bff;
+        letter-spacing:2px;
+    }
+
+    .badge{
+        display:inline-block;
+        margin-top:10px;
+        padding:6px 14px;
+        border-radius:50px;
+        background: rgba(127,123,255,0.15);
+        border:1px solid rgba(127,123,255,0.4);
+        color:#cfcaff;
+        font-size:12px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>DevBrain</h1>
+        <p>Requerimientos No Funcionales del sistema</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card full">
+            <h2>Objetivo</h2>
+            <p style="color:#ddd; line-height:1.6;">
+                Definir los requisitos no funcionales del sistema DevBrain para garantizar la
+                seguridad, rendimiento, accesibilidad, escalabilidad y disponibilidad de la plataforma.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Seguridad</h2>
+            <ul>
+                <li>Proteger datos sensibles de usuarios y proyectos.</li>
+                <li>Control de acceso según permisos.</li>
+                <li>Garantizar integridad y confidencialidad.</li>
+                <li>Prevenir accesos no autorizados.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Rendimiento</h2>
+            <ul>
+                <li>Respuestas rápidas a solicitudes.</li>
+                <li>Consultas sin retrasos significativos.</li>
+                <li>Funcionamiento estable del sistema.</li>
+                <li>Procesamiento oportuno de notificaciones.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Accesibilidad y Usabilidad</h2>
+            <ul>
+                <li>Interfaz intuitiva y fácil de usar.</li>
+                <li>Diseño claro, organizado y consistente.</li>
+                <li>Compatible con navegadores modernos.</li>
+                <li>Navegación simple y eficiente.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Escalabilidad</h2>
+            <ul>
+                <li>Permitir nuevas funcionalidades.</li>
+                <li>Crecimiento sin afectar rendimiento.</li>
+                <li>Adaptación a más usuarios y datos.</li>
+                <li>Integración con otras herramientas.</li>
+            </ul>
+        </div>
+
+        <div class="card full">
+            <h2>Disponibilidad</h2>
+            <ul>
+                <li>Acceso disponible cuando el usuario lo requiera.</li>
+                <li>Mecanismos de respaldo de información.</li>
+                <li>Recuperación ante fallos del sistema.</li>
+                <li>Acceso desde cualquier lugar con Internet.</li>
+            </ul>
+        </div>
+
+        <div class="card full">
+            <h2>Prioridad</h2>
+            <p class="priority">ALTA</p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
