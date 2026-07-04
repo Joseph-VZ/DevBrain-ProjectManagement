@@ -22,9 +22,9 @@ Contrato de la API REST que consume el frontend (Vue 3) desde el backend (Node.j
 **Body esperado:**
 ```json
 {
+  "name": "Joseph",
   "email": "joseph@example.com",
-  "password": "contraseña123",
-  "name": "Joseph"
+  "password": "contraseña123"
 }
 ```
 
@@ -32,8 +32,8 @@ Contrato de la API REST que consume el frontend (Vue 3) desde el backend (Node.j
 ```json
 {
   "id": "uuid-del-usuario",
-  "email": "joseph@example.com",
-  "name": "Joseph"
+  "name": "Joseph",
+  "email": "joseph@example.com"
 }
 ```
 
