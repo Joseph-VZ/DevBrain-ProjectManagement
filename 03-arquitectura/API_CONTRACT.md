@@ -143,12 +143,13 @@ Contrato de la API REST que consume el frontend (Vue 3) desde el backend (Node.j
 ```json
 [
   {
-    "id": "uuid-decision-1",
+    "id": 1,
+    "projectId": 5,
     "title": "Migrar de MySQL a PostgreSQL",
-    "description": "Se necesita soporte para tipos de datos JSON avanzados",
-    "alternatives": ["Mantener MySQL", "Migrar a PostgreSQL", "Migrar a MongoDB"],
-    "proposedBy": "uuid-del-usuario",
-    "createdAt": "2026-06-20T14:30:00Z"
+    "description": "Se eligió PostgreSQL por su estabilidad y rendimiento",
+    "alternatives": ["MySQL", "MongoDB"],
+    "proposedBy": 3,
+    "createdAt": "2026-07-06T10:17:39Z"
   }
 ]
 ```
@@ -156,7 +157,7 @@ Contrato de la API REST que consume el frontend (Vue 3) desde el backend (Node.j
 **Respuesta de error (404):**
 ```json
 {
-  "error": "Proyecto no encontrado"
+  "error": "Proyecto no encontrado o sin acceso"
 }
 ```
 
@@ -169,20 +170,23 @@ Contrato de la API REST que consume el frontend (Vue 3) desde el backend (Node.j
 **Body esperado:**
 ```json
 {
-  "projectId": "uuid-proyecto-1",
-  "title": "Migrar de MySQL a PostgreSQL",
-  "description": "Se necesita soporte para tipos de datos JSON avanzados",
-  "alternatives": ["Mantener MySQL", "Migrar a PostgreSQL", "Migrar a MongoDB"]
+  "projectId": 5,
+  "title": "Uso de PostgreSQL",
+  "description": "Se eligió PostgreSQL por su estabilidad y rendimiento",
+  "alternatives": ["MySQL", "MongoDB"]
 }
 ```
 
 **Respuesta exitosa (201):**
 ```json
 {
-  "id": "uuid-decision-1",
-  "projectId": "uuid-proyecto-1",
-  "title": "Migrar de MySQL a PostgreSQL",
-  "createdAt": "2026-06-20T14:30:00Z"
+  "id": 1,
+  "projectId": 5,
+  "title": "Uso de PostgreSQL",
+  "description": "Se eligió PostgreSQL por su estabilidad y rendimiento",
+  "alternatives": ["MySQL", "MongoDB"],
+  "proposedBy": 3,
+  "createdAt": "2026-07-06T10:17:39Z"
 }
 ```
 
@@ -202,17 +206,17 @@ Contrato de la API REST que consume el frontend (Vue 3) desde el backend (Node.j
 **Body esperado:**
 ```json
 {
-  "decisionId": "uuid-decision-1",
+  "decisionId": 1,
   "vote": "approve"
 }
 ```
-`vote` acepta los valores `"approve"` o `"reject"`.
+`vote` acepta los valores `"aprobar"` o `"rechazar"`.
 
 **Respuesta exitosa (201):**
 ```json
 {
-  "decisionId": "uuid-decision-1",
-  "userId": "uuid-del-usuario",
+  "decisionId": 1,
+  "userId": 3,
   "vote": "approve"
 }
 ```
@@ -233,7 +237,7 @@ Contrato de la API REST que consume el frontend (Vue 3) desde el backend (Node.j
 **Body esperado:**
 ```json
 {
-  "projectId": "uuid-proyecto-1",
+  "projectId": 5,
   "question": "¿Por qué se migró de MySQL a PostgreSQL?"
 }
 ```
@@ -248,7 +252,7 @@ Contrato de la API REST que consume el frontend (Vue 3) desde el backend (Node.j
 **Respuesta de error (500):**
 ```json
 {
-  "error": "No se pudo procesar la consulta de IA en este momento"
+  "error": "Error al obtener respuesta de Gemini"
 }
 ```
 
