@@ -202,3 +202,41 @@ Ejemplo: `feat(auth): add JWT middleware validation`
 
 *Última actualización: 5 de julio de 2026 — Joseph*
 *Actualizar al cerrar cada sprint o cuando cambien roles, stack o decisiones importantes.*
+
+## 12. Estado al 15 de julio de 2026 (última actualización)
+
+### Despliegue
+- Frontend: https://dev-brain-front-end.vercel.app ✅
+- Backend: https://devbrain-backend-nrpg.onrender.com ✅ (Live)
+- Base de datos: Supabase ✅
+
+### Documentos generados (Sprint 4 — Joseph)
+- DOC-01 Acta de constitución → DevBrain_DOC01_ActaConstitucion.docx ✅
+- DOC-02 Plan de administración → DevBrain_DOC02_PlanAdministracion.docx ✅
+- Ambos van en 11-documentacion-final/ del repo DevBrain-ProjectManagement
+- Pendiente subirlos por PR: rama docs/reporte-final-secciones-3-4 → develop
+
+### Problema activo — CORS
+El frontend en Vercel no puede conectar con el backend en Render.
+Error: "No 'Access-Control-Allow-Origin' header is present"
+Lo que se hizo:
+- Se instaló el paquete cors en el backend
+- Se configuró en src/index.ts permitiendo localhost:5173 y dev-brain-front-end.vercel.app
+- Se mergeó develop → main en el repo DevBrain-BackEnd
+- Render redesplegó exitosamente (commit 0fc6a1f, branch main, "Your service is live")
+- PERO el error de CORS persiste en el navegador
+Posible causa: el CORS se configuró DESPUÉS de express.json() o el
+paquete cors no quedó en el build de producción. Verificar que
+src/index.ts tenga app.use(cors({...})) ANTES de app.use(express.json())
+y que cors aparezca en dependencies (no devDependencies) del package.json.
+
+### Issues pendientes de Joseph
+- FRONT-17 — Gráfica de actividad del equipo en dashboard (bloqueado por CORS)
+- DOC-03 — Cierre del proyecto (se redacta al final, cuando todo esté listo)
+
+### Nombres completos del equipo (para documentos)
+- Joseph Lucero Vázquez
+- Jesús Juárez López
+- Vanessa Krystal García Vázquez
+- América Carrera Jiménez
+- Adolfo Montes Zayas
